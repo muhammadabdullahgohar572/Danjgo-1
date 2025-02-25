@@ -1,15 +1,15 @@
-{% extends "layout.html" %}
-{% load static %} 
+{% load static tailwind_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% tailwind_css %}
+
     <title>Document</title>
-</head>
-<body>
-    <h1>This is a Home Page Index.html</h1>
-    {% block content %} Tittile{% endblock %}
-</body>
+  </head>
+  <body>
+    <h1 class='bg-yellow-400  text-red-500 text-4xl'>This is a Home Page Index.html</h1>
+  </body>
 </html>

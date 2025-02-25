@@ -20,6 +20,7 @@ from . import views  # ✅ Corrected spelling
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+  path("__reload__/", include("django_browser_reload.urls")),
     path('', views.Home, name='Home'), 
     path('Home/', views.Home, name='Home'),  # ✅ Added missing comma
     path('About/', views.About, name='About'),  # ✅ Fixed syntax
