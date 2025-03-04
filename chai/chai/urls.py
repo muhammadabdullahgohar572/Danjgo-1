@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from . import views  # ✅ Corrected spelling
-
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
   path("__reload__/", include("django_browser_reload.urls")),
@@ -26,4 +27,4 @@ urlpatterns = [
     path('About/', views.About, name='About'),  # ✅ Fixed syntax
     path('Contact_us/', views.Contact_us, name='Contact_us'),  # ✅ Fixed syntax
    path('abdullah/', include('abdullah.urls')),  # ✅ Fixed syntax
-]
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
